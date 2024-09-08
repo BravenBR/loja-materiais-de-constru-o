@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstruVida</title>
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <header>
+        <img id="caminhao" src="images/icons8-caminhão-96.png" alt="">
+        <div id="container-linha">
+            <hr id="linha">
+        </div>
+        
+        <div id="cabeçalho">
+            <a id="logo" href="index.html"><span><p>ConstruVida</p></span></a>
+            <nav>
+                <ul>
+                    <div id="menu">
+                        <a id="li1" href="produtos.html"><li>Produtos</li></a>
+                        <a id="li2" href="contato.html"><li>Contato</li></a>
+                        <form id="container-pesquisa" method="get">
+                            <input type="search" name="tPesquisa" id="cPesquisa" maxlength="100" size="30" placeholder="">
+                            <label id="pesquisa" for="cPesquisa">PESQUISAR</label>
+                        </form>
+                    </div>
+                </ul>
+            </nav>
+            <div id="darklight">
+                <label class="label-mode" for="boxcheck">
+                    <input type="checkbox" class="checkbox" id="boxcheck">
+                    <i id="lua" class="fas fa-moon"></i>
+                    <i id="sol" class="fas fa-sun"></i>
+                </label>
+            </div>
+            <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+        </div>
+        <div id="container-linhas">
+            <hr id="linha-esquerda"></div>
+            <hr id="linha-direita"></div>
+        </div>
+    </header>
+    <main>
+        <form id="f_contato" method="post" action="mailto:construvida@hotmail.com">
+            <fieldset id="id_usuario">
+                <legend>Identificação do Usuário</legend>
+                <p><label for="cNome2">Nome: </label><input type="text" name="tNome2" id="cNome2" size="100" maxlength="50" placeholder="Nome Completo" required></p>
+                <p><label for="cSenha">Senha: </label><input type="password" name="pSenha" id="cSenha" size="20" maxlength="10" placeholder="Máximo de 10 carácteres" required></p>
+                <p><label for="cEmail">E-mail: </label><input type="email" name="eEmail" id="cEmail" size="50" maxlength="50" placeholder="Email Válido" required></p>
+                <fieldset id="sexo_usuario">
+                    <legend>Sexo</legend>
+                    <p><input type="radio" name="rSexo" id="cMasc" checked ><label for="cMasc"> Masculino</label></p>
+                    <p><input type="radio" name="rSexo" id="cFem"><label for="cFem"> Feminino</label></p>
+                    <p><label for="cData">Data de Nascimento: </label><input type="date" name="tData" id="cData" size=""></p>
+                </fieldset>
+            </fieldset>
+            <fieldset id="end_usuario">
+                <legend>Endereço do Usuário</legend>
+                <p><label for="cLogra">Logradouro: </label><input type="text" name="tLogra" id="cLogra" size="50" maxlength="50" placeholder="Rua, Avenida..." required></p>
+                <p><label for="cBairro">Bairro: </label><input type="text" name="tBairro" id="cBairro" size="50" maxlength="50" placeholder="Vera Cruz, Genoveva..." required></p>
+                <p><label for="cNum">Número: </label><input type="number" name="nNum" id="cNum" placeholder="250..." min="0" max="9999" required></p>
+                <p><label for="cCompl">Complemento: </label><input type="text" name="tCompl" id="cCompl" size="50" maxlength="50" placeholder="Em frente ao restaurante..." required></p>
+                <p><label for="cEst">Estado</label></p>
+                <select name="tEst" id="cEst" required>
+                    <option  selected="true">---------</option>
+                    <optgroup label="Região Centro Oeste">
+                        <option>Brasília</option>
+                        <option>Goiás</option>
+                    </optgroup>
+                    <optgroup label="Região Sul">
+                        <option>Mato Grosso</option>
+                        <option>Mato Grosso do Sul</option>
+                    </optgroup>
+                </select>
+                <p><label for="cCid">Cidade: </label><input type="search" name="tCid" id="cCid" maxlength="40" size="30" placeholder="Sua Cidade" required></p>
+                <datalist id="cidades" required>
+                    <option value="Goiânia">Goiânia</option>
+                    <option value="Morrinhos">Morrinhos</option>
+                    <option value="Catalão">Catalão</option>
+                    <option value="Goiandira">Goiandira</option>
+                </datalist>
+            </fieldset>
+            <fieldset id="msn_usuario">
+                <legend>Escreva sua Mensagem</legend>
+                <p><label for="cUrg">Urgência  </label>Mínimo<input type="range" name="raUrg" id="cUrg" min="0" max="10" step="2">Máximo</p>
+                <p><label for="cMsn">Mensagem: </label></p>
+                    <textarea name="tMsn" id="cMsn" cols="30" rows="5" maxlength="500"></textarea>
+                <fieldset id="opcionais">
+                    <legend>Dados Complementares</legend>
+                    <p><input type="checkbox" name="chGost" id="cGost"><label for="cGost"> Gostaria de receber promoções por E-mail?</label></p>
+                </fieldset>
+            </fieldset>
+            <input type="submit" name="bSub" id="cSub" value="Enviar">
+        </form>
+    </main>
+    <footer>
+        <div id="container-orçamento">
+            <div class="title-container-orçamento">
+                <p class="texts">solicite seu orçamento conosco</p>
+            </div>
+            <form id="label-inputs-orçamento" method="post" action="mailto:construvida@hotmail.com">
+                <div id="container-nome-orçamento">
+                    <input type="text" name="tNome" id="cNome" size="20" maxlength="50" placeholder="">
+                    <label class="label-nome texts" for="cNome">nome</label>
+                </div>
+                <div id="container-orça-orçamento">
+                    <input type="text" name="tOrça" id="cOrça" size="20" maxlength="50" placeholder="">
+                    <label class="label-orça texts" for="cOrça">orçamento</label>
+                </div>
+                <input type="submit" name="bRoda" id="cRoda" value="Enviar">
+            </form>
+        </div>
+        
+        <address class="texts2">rua da palmeiras, 218 - morrinhos goiás | todos os direitos reservados &copy felipe pereira</address>
+    </footer>
+</body>
+</html>

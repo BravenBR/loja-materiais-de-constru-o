@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+
+
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#cabeçalho {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(1deg,#000000,#ffffff,#ffffff);
+    padding: 20px;
+}
+
+#logo {
+    z-index: 2;
+    font-size: 50px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    animation: letras 5s infinite ease-out alternate;
+    animation-delay: 6s;
+    transition: transform 5s linear;
+}
+
+@keyframes letras {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-25px);
+    }
+}
+
+#logo span p {
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    color: transparent;
+    background-clip: text;
+
+}
+
+#darklight {
+    z-index: 2;
+    animation: some 5s infinite ease-out alternate;
+    animation-delay: 13s;
+    transition: transform 5s linear;
+}
+
+@keyframes some {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-25px);
+    }
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label-mode {
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    border: 1px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+#lua {
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    height: 22px;
+    width: 40px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    color: #000000;
+    transition: color 0.5s linear, border 0.5s linear;
+}
+
+#sol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+    margin-top: 3px;
+    height: 22px;
+    width: 40px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    color: green;
+    transition: color 0.5s linear, border 0.5s linear;
+}
+
+.checkbox:checked ~ #lua  {
+    color: green;
+    border: 1px solid green;
+    transition: color 0.5s linear, border 0.5s linear;
+}
+
+.checkbox:checked ~ #sol {
+    color: #000000;
+    border: 1px solid #000000;
+    transition: color 0.10s linear, border 0.5s linear;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#menu a {
+    z-index: 2;
+    font-size: 25px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+}
+
+#menu a li {
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    background-clip: text;
+    color: transparent;
+    
+}
+
+#li1 {
+    animation: letras 5s infinite ease-out alternate;
+    animation-delay: 6.5s;
+    transition: transform 5s linear;
+}
+
+#li2 {
+    animation: letras 5s infinite ease-out alternate;
+    animation-delay: 7s;
+    transition: transform 5s linear;
+}
+
+#menu a::after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    transition: width 0.6s ease-in-out;
+}
+
+#menu a:hover::after {
+    width: 100%;
+}
+
+#container-pesquisa {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    border-left: 1px solid #044b23;
+    padding-left: 8px;
+    z-index: 2;
+    position: relative;
+    animation: letras 5s infinite ease-out alternate;
+    animation-delay: 9.5s;
+    transition: transform 5s linear;
+}
+
+#cPesquisa {
+    color: transparent;
+    outline: none;
+    border-radius: 10px;
+    height: 30px;
+    background: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border: none;
+}
+
+#cPesquisa:focus {
+    color: #000000;
+    transition: color 0.5s linear;
+    font-family: sans-serif;
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+}
+
+#pesquisa {
+    display: flex;
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    color: transparent;
+    background-clip: text;
+    font-size: 25px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    transition: 0.5s;
+    pointer-events: none;
+    animation: balanço 2s infinite linear alternate;
+}
+
+#cPesquisa:focus ~ #pesquisa {
+    top: -26px;
+    left: 8px;
+    animation: none;
+}
+
+#cPesquisa:not(:placeholder-shown) ~ #pesquisa {
+    top: -26px;
+    left: 8px;
+    animation: none;
+}
+
+#cPesquisa:not(:placeholder-shown) {
+    color: #000000;
+    font-family: "SUSE", sans-serif;
+    background: linear-gradient(1deg,#2f3131,#636666,#afb3b1);
+    box-shadow: 0 0 10px #000000;
+}
+
+#caminhao {
+    width: 5%;
+    position: absolute;
+    height: 70%;
+    animation: caminhao-animation 10s infinite linear;
+    bottom: 0px;
+    z-index: 1;
+    
+}
+
+#container-linha {
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    bottom: 0%;
+    overflow: hidden;
+    animation: caminhao-animation 10s infinite linear;
+}
+
+#linha { 
+position: absolute;
+width: 100%;
+bottom: 0px;
+height: 5%;
+border: none;
+background-color: #1c1f1f;
+animation: animarborda 1s infinite linear;
+}
+
+@keyframes caminhao-animation {
+    from {
+        left: -5%;
+        transition: transform 2s linear;
+    }
+    to {
+        left: 100%;
+    }
+    
+}
+
+@keyframes animarborda {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 100%;
+    }
+}
+
+@keyframes animarborda {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 100%;
+    }
+}
+
+#container-linhas {
+    width: 100%;
+    position: relative;
+}
+
+#linha-esquerda {
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    border: none;
+    background-color: #000000;
+    animation: linha-esquerda-animation 10s infinite ease-in-out alternate;
+}
+
+@keyframes linha-esquerda-animation {
+    from {
+        left: -50%;
+    }
+    to {
+        left: 0%;
+    }
+    
+}
+
+#linha-direita {
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    border: none;
+    background-color: #000000;
+    animation: linha-direita-animation 10s infinite ease-in-out alternate;
+}
+
+@keyframes linha-direita-animation {
+    from {
+        right: -50%;
+    }
+    to {
+        right: 0%;
+    }
+    
+}
+
+
+
+/* main */
+
+main {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+    background: url(images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#f_contato {
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    box-shadow: 0 0 20px #000000;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+}
+
+#id_usuario {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+#sexo_usuario {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+#end_usuario {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+#msn_usuario {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#opcionais {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+#cSub {
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(180deg,#000000b2,#ffffff,#ffffff);
+}
+
+#container-orçamento {
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    box-shadow: 0 0 20px #000000;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.title-container-orçamento {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #000000;
+    padding-right: 8px;
+}
+
+#label-inputs-orçamento {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+#container-nome-orçamento {
+    position: relative;
+}
+
+.label-nome {
+    position: absolute;
+    top: 4px;
+    left: 55px;
+    pointer-events: none;
+    transition: 0.5s;
+    animation: balanço 2s infinite linear alternate;
+}
+
+@keyframes balanço {
+    0% {
+        
+    }
+    100% {
+        border-bottom: 2px solid #000000;
+    }
+}
+
+#container-orça-orçamento {
+    position: relative;
+}
+
+.label-orça {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    pointer-events: none;
+    transition: 0.5s;
+    animation: balanço 2s infinite linear alternate;
+}
+
+#cNome {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    height: 30px;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+#cNome:focus ~ .label-nome {
+    top: -26px;
+    left: 45px;
+    animation: none;
+}
+
+#cNome:not(:placeholder-shown) ~ .label-nome {
+    top: -26px;
+    left: 45px;
+    animation: none;
+}
+
+#cNome:not(:placeholder-shown) {
+    color: #000000;
+    font-family: "SUSE", sans-serif;
+    background: linear-gradient(1deg,#e3e7e7,#b7b9b9,#d6dad8);
+    box-shadow: 0 0 10px #000000;
+}
+
+#cNome:focus {
+    color: #000000;
+    transition: color 0.5s linear;
+    font-family: "SUSE", sans-serif;
+    background: linear-gradient(1deg,#e3e7e7,#b7b9b9,#d6dad8);
+    box-shadow: 0 0 10px #000000;
+}
+
+#cOrça {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    height: 30px;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+#cRoda {
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#cOrça:focus ~ .label-orça {
+    top: 30px;
+    left: 15px;
+    animation: none;
+}
+
+#cOrça:not(:placeholder-shown) ~ .label-orça {
+    top: 30px;
+    left: 15px;
+    animation: none;
+}
+
+#cOrça:not(:placeholder-shown) {
+    color: #000000;
+    font-family: "SUSE", sans-serif;
+    background: linear-gradient(1deg,#e3e7e7,#b7b9b9,#d6dad8);
+    box-shadow: 0 0 10px #000000;
+    animation: none;
+}
+
+#cOrça:focus {
+    color: #000000;
+    transition: color 0.5s linear;
+    font-family: "SUSE", sans-serif;
+    background: linear-gradient(1deg,#e3e7e7,#b7b9b9,#d6dad8);
+    box-shadow: 0 0 10px #000000;
+}
+
+.texts {
+    font-size: 20px;
+    font-family: "SUSE", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.texts2 {
+    font-size: 14px;
+    font-family: "SUSE", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
